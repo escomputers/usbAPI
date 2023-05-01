@@ -45,6 +45,7 @@ pip-delete-this-directory.txt
 # Notes & Todo .txt files
 notes.txt
 todo.txt
+memo.txt
 
 # Unit test / coverage reports
 htmlcov/

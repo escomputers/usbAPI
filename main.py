@@ -4,36 +4,40 @@ import uvicorn
 
 app = FastAPI()
 
-
 class App:
-    def get_current_status():
-        status = int(os.popen("/usr/bin/java/bin/java -jar /home/emiliano/DenkoviRelayCommandLineTool/DenkoviRelayCommandLineTool.jar DAE06Lcq 8 8 status").read())
+    @staticmethod
+    def get_current_status(relay_port):
+        command = f"/usr/bin/java/bin/java -jar /home/emiliano/DenkoviRelayCommandLineTool/DenkoviRelayCommandLineTool.jar DAE06Lcq 8 {relay_port} status"
+        status = int(os.popen(command).read())
         return status
 
+    @staticmethod
+    def turn_on(relay_port):
+        command = f"/usr/bin/java/bin/java -jar /home/emiliano/DenkoviRelayCommandLineTool/DenkoviRelayCommandLineTool.jar ID=0 8 {relay_port} 1"
+        os.system(command)
 
-    def turn_on():
-        os.system("/usr/bin/java/bin/java -jar /home/emiliano/DenkoviRelayCommandLineTool/DenkoviRelayCommandLineTool.jar ID=0 8 8 1")
+    @staticmethod
+    def turn_off(relay_port):
+        command = f"/usr/bin/java/bin/java -jar /home/emiliano/DenkoviRelayCommandLineTool/DenkoviRelayCommandLineTool.jar ID=0 8 {relay_port} 0"
+        os.system(command)
 
 
-    def turn_off():
-        os.system("/usr/bin/java/bin/java -jar /home/emiliano/DenkoviRelayCommandLineTool/DenkoviRelayCommandLineTool.jar ID=0 8 8 0")
-
-
-@app.get("/cooler/status")
-async def get_status():
-    status = App.get_current_status()
+@app.get("/{relay_port}/status")
+async def get_status(relay_port: int):
+    status = App.get_current_status(relay_port)
     return {"status": status}
 
-@app.post("/cooler/on")
-async def post_turn_on():
-    App.turn_on()
+@app.post("/{relay_port}/on")
+async def post_turn_on(relay_port: int):
+    App.turn_on(relay_port)
     return {"message": "Device turned on"}
 
-@app.post("/cooler/off")
-async def post_turn_off():
-    App.turn_off()
+@app.post("/{relay_port}/off")
+async def post_turn_off(relay_port: int):
+    App.turn_off(relay_port)
     return {"message": "Device turned off"}
 
 
 if __name__ == "__main__":
     uvicorn.run("main:app", log_level="info")
+
