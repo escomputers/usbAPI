@@ -1,0 +1,12 @@
+[Unit]
+Description=USB relay board restAPI
+After=network-online.target
+
+[Service]
+ExecStart=python /home/emiliano/usbAPI/main.py
+WorkingDirectory=/home/emiliano/usbAPI/
+Environment=PYTHONPATH=/home/emiliano/usbAPI/env/lib/python3.9/site-packages
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
