@@ -39,5 +39,5 @@ async def post_turn_off(relay_port: int):
 
 
 if __name__ == "__main__":
-    uvicorn.run("main:app", log_level="info")
+    uvicorn.run("main:app", host="0.0.0.0", log_level="info")
 
