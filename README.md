@@ -1,10 +1,10 @@
 # usbAPI
-Simple restAPI for controlling a local USB device
+Simple restAPI for controlling a local USB device via system call
 
 
 ### Install
 ```bash
-# Create Python virtual environment
+# Set up Python virtual environment
 mkdir -p env
 python -m venv env && source env/bin/activate
 python -m pip install -r requirements.txt
