@@ -3,9 +3,9 @@ Description=USB relay board restAPI
 After=network-online.target
 
 [Service]
-ExecStart=python /$HOME/usbAPI/main.py
-WorkingDirectory=/$HOME/usbAPI/
-Environment=PYTHONPATH=/$HOME/usbAPI/env/lib/python3.9/site-packages
+ExecStart=python /home/emiliano/usbAPI/main.py
+WorkingDirectory=/home/emiliano/usbAPI/
+Environment=PYTHONPATH=/home/emiliano/usbAPI/env/lib/python3.9/site-packages
 Restart=on-failure
 
 [Install]

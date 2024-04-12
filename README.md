@@ -9,7 +9,11 @@ mkdir -p env
 python -m venv env && source env/bin/activate
 python -m pip install -r requirements.txt
 
-# Change usbapi.service paths before copying it to /etc
+# Change these lines inside usbapi.service file before copying it to /etc
+#ExecStart=python /home/emiliano/usbAPI/main.py
+#WorkingDirectory=/home/emiliano/usbAPI/
+#Environment=PYTHONPATH=/home/emiliano/usbAPI/env/lib/python3.9/site-packages
+
 sudo cp usbapi.service /etc/systemd/system/
 sudo systemctl enable usbapi.service
 sudo systemctl daemon-reload
