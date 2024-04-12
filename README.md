@@ -1,12 +1,15 @@
 # usbAPI
-simple restAPI for controlling local USB device
+Simple restAPI for controlling a local USB device
 
 
-### install
-```
+### Install
+```bash
+# Create Python virtual environment
 mkdir -p env
 python -m venv env && source env/bin/activate
 python -m pip install -r requirements.txt
+
+# Change uvicorn.service paths before copying it to /etc
 cp uvicorn.service /etc/systemd/system/
 sudo systemctl enable uvicorn.service
 sudo systemctl daemon-reload
