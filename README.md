@@ -10,7 +10,7 @@ python -m venv env && source env/bin/activate
 python -m pip install -r requirements.txt
 
 # Change usbapi.service paths before copying it to /etc
-cp usbapi.service /etc/systemd/system/
+sudo cp usbapi.service /etc/systemd/system/
 sudo systemctl enable usbapi.service
 sudo systemctl daemon-reload
 sudo systemctl start usbapi.service
