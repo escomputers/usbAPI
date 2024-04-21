@@ -19,7 +19,7 @@ bash install.sh
 ```
 
 
-### Uusage
+### Usage
 ```bash
 curl http://localhost:8000/1/status
 # or
