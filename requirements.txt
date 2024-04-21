@@ -1,3 +1,4 @@
 fastapi
 uvicorn[standard]
 passlib[bcrypt]
+git+https://github.com/escomputers/denkovi-relay-py-controller.git@master
