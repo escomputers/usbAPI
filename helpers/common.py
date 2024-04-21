@@ -8,8 +8,6 @@ BOARD_TYPE = 8  # available types are: 4,8,16
 
 # Set HTTP Port to listen to
 HTTP_PORT = 8000
-# Set IP address for HTTP port binding
-ADDRESS = "0.0.0.0"  # Default: listen to all host network interfaces
 
 ########################################################################
 # DO NOT EDIT
