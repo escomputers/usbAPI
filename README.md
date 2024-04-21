@@ -1,5 +1,5 @@
-# usbAPI
-Simple restAPI for controlling a local USB device via system call
+# Denkovi USB Relay Boards RestAPI
+Simple REST API for controlling a local [USB Denkovi Relay Board](https://denkovi.com/relay-boards)
 
 
 ### Install
