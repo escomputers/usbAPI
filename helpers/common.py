@@ -10,7 +10,7 @@ BOARD_TYPE = 8  # available types are: 4,8,16
 HTTP_PORT = 8000
 
 ########################################################################
-# DO NOT EDIT
+# DO NOT EDIT UNLESS YOU KNOW WHAT YOU'RE DOING
 # Dictionary containing boards details
 BOARDS = {
     4: {"lib_name": "type4", "ports": [0, 5]},
