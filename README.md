@@ -3,12 +3,7 @@ Simple REST API for controlling a local [USB Denkovi Relay Board](https://denkov
 
 
 ### Requirements
-1. Set your paths inside [usbapi.service](usbapi.service) file:
-```bash
-ExecStart=python /home/emiliano/usbAPI/main.py
-WorkingDirectory=/home/emiliano/usbAPI/
-Environment=PYTHONPATH=/home/emiliano/usbAPI/env/lib/python3.9/site-packages
-```
+1. Check your paths inside [usbapi.service](usbapi.service) file (especially the Python virtual environment path)
 
 2. Set your Relay Board type and HTTP Port inside [helpers/common.py file](helpers/common.py) (Optional) 
 
